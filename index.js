@@ -25,6 +25,9 @@ app.use(Express.urlencoded({ extended: true }));
 // Hacer Socket.IO disponible en req.app
 app.set('io', io);
 
+// Variable en memoria para productos
+let products = [];
+
 // Configurar rutas
 const productRoutes = configureProductRoutes(io);
 app.use('/api/products', productRoutes);
