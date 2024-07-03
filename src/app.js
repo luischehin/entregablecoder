@@ -7,6 +7,10 @@ import __dirname from "./dirname.js";
 import path from "path";
 import fs from "fs";
 import { Server } from "socket.io";
+import { connectDb } from "./utils/mongoose.js";
+
+// mongodb connection
+connectDb();
 
 const products = JSON.parse(fs.readFileSync("./data/products.json", "utf-8"));
 
